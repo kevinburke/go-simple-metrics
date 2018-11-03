@@ -34,17 +34,17 @@ func TestIncrementIncrements(t *testing.T) {
 }
 
 func ExampleIncrement() {
-	Start("web")
+	Start("web", "test@example.com")
 	Increment("dequeue.success")
 }
 
 func ExampleMeasure() {
-	Start("web")
+	Start("web", "test@example.com")
 	Measure("workers.active", 6)
 }
 
 func ExampleTime() {
-	Start("web")
+	Start("web", "test@example.com")
 	start := time.Now()
 	time.Sleep(3)
 	Time("auth.latency", time.Since(start))
