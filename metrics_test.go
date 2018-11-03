@@ -4,7 +4,6 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Shyp/goshyp/test"
 	"github.com/rcrowley/go-metrics"
 )
 
@@ -19,7 +18,9 @@ func TestNamespace(t *testing.T) {
 	}
 
 	Namespace = ""
-	test.AssertEquals(t, getWithNamespace("bar"), "bar")
+	if got := getWithNamespace("bar"); got != "bar" {
+		t.Errorf("getWithNamespace(bar) should be 'bar', got %q", got)
+	}
 }
 
 func TestIncrementIncrements(t *testing.T) {
