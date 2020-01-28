@@ -4,7 +4,6 @@
 package metrics
 
 import (
-	"fmt"
 	"log"
 	"os"
 	"time"
@@ -27,7 +26,7 @@ func getWithNamespace(metricName string) string {
 	if Namespace == "" {
 		return metricName
 	} else {
-		return fmt.Sprintf("%s.%s", Namespace, metricName)
+		return Namespace + "." + metricName
 	}
 }
 
